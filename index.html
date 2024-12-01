@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a0b1d;
+            color: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #c01442;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .flashcard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px; /* Espaço entre os flashcards */
+            width: 100%;
+            max-width: 1000px; /* Reduzindo a largura para proporção melhor */
+        }
+
+        .flashcard {
+            position: relative;
+            width: 100%;
+            padding: 20px;
+            height: 250px; 
+            background-color: #1a1b3a; 
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 255, 255, 0.2);
+            color: #ff146a;
+            text-align: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.4s;
+            transform-style: preserve-3d;
+        }
+
+        .flashcard.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard .front, .flashcard .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            backface-visibility: hidden;
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        .flashcard .back {
+            transform: rotateY(180deg);
+            background-color: #14152b;
+            color: #679fbd;
+            box-shadow: 0px 4px 12px rgba(255, 0, 255, 0.2);
+        }
+
+        
+        .flashcard:hover {
+            box-shadow: 0px 0px 20px rgba(57, 255, 20, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flashcards arco e flecha </h1>
+
+   
+    <div class="flashcard-grid">
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">O que é o arco recurvo??</div>
+            <div class="back">O arco recurvo é um tipo de arco com extremidades curvadas para frente. Ele é usado em competições olímpicas e é conhecido por sua eficiência e potência..</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">O que é um arco composto??</div>
+            <div class="back">o  arco composto é um tipo de arco moderno que usa roldanas e cabos para ajudar a reduzir a tensão durante o uso, aumentando a precisão e a potência do disparo..</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">O que são flechas de carbono??</div>
+            <div class="back">Flechas de carbono são leves, duráveis e muito populares no tiro com arco, principalmente para tiros de longa distância. Elas são mais rápidas e resistentes a danos em comparação com as flechas de madeira..</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">Como deve ser a postura certa para o tiro com arco??</div>
+            <div class="back">A postura correta inclui manter os pés alinhados com os ombros, o corpo ereto e os ombros relaxados. O arco deve ser mantido de forma confortável, com o braço esticado para frente e o foco no alvo..</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">O que é um arco de longbow??</div>
+            <div class="back">O longbow é um arco tradicional e longo, geralmente feito de madeira maciça. Ele foi amplamente utilizado na Idade Média para batalhas, sendo eficaz em distâncias longas..</div>
+        </div>
+        <div class="flashcard" onclick="flipCard(this)">
+            <div class="front">O que significa "nock" de uma flecha??</div>
+            <div class="back">O "nock" é a parte da flecha que se encaixa na corda do arco. Ele é geralmente feito de plástico ou madeira e ajuda a manter a flecha no lugar antes do disparo..</div>
+        </div>
+    </div>
+
+    <script>
+       
+        function flipCard(card) {
+            card.classList.toggle("is-flipped");
+        }
+    </script>
+
+</body>
+</html>
